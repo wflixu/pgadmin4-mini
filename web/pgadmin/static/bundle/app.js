@@ -10,15 +10,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MainMenuFactory from "../../browser/static/js/MainMenuFactory";
-import AppMenuBar from "../js/AppMenuBar";
+
 import ObjectBreadcrumbs from "../js/components/ObjectBreadcrumbs";
 import Theme from "../js/Theme";
 
 define("app", ["sources/pgadmin", "bundled_browser"], function (pgAdmin) {
+
   let initializeModules = function (obj) {
     for (let key in obj) {
       let module = obj[key];
-
       if (module && module.init && typeof module.init == "function") {
         try {
           module.init();
@@ -45,17 +45,7 @@ define("app", ["sources/pgadmin", "bundled_browser"], function (pgAdmin) {
 
   // Create menus after all modules are initialized.
   MainMenuFactory.createMainMenus();
-
-  const menuContainerEle = document.querySelector("#main-menu-container");
-  if (menuContainerEle) {
-    ReactDOM.render(
-      <Theme>
-        <AppMenuBar />
-      </Theme>,
-      menuContainerEle
-    );
-  }
-
+  console.dir(pgAdmin)
   ReactDOM.render(
     <Theme>
       <ObjectBreadcrumbs pgAdmin={pgAdmin} />

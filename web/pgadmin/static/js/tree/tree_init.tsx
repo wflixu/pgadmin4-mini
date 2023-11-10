@@ -102,7 +102,9 @@ const initBrowserTree = (pgBrowser) => {
 function BrowserTree(props) {
   const [contextPos, setContextPos] = React.useState<{x: number, y: number} | null>(null);
   const contextMenuItems = pgAdmin.Browser.BrowserContextMenu;
-
+  // eslint-disable-next-line no-console
+  console.log(contextMenuItems);
+  
   const getPgMenuItem = (menuItem, i)=>{
     if(menuItem.type == 'separator') {
       return <PgMenuDivider key={i}/>;
@@ -125,6 +127,9 @@ function BrowserTree(props) {
 
   const onContextMenu = React.useCallback(async (ev: MouseEvent, item: FileOrDir)=>{
     ev.preventDefault();
+    console.warn('----onContextMenu');
+    console.warn(item);
+
     if(item) {
       await pgAdmin.Browser.tree.select(item);
       setContextPos({x: ev.clientX, y: ev.clientY});

@@ -69,6 +69,7 @@ export default class MainMenuFactory {
       }
     });
 
+
     pgAdmin.Browser.enable_disable_menus();
   }
 
@@ -111,6 +112,8 @@ export default class MainMenuFactory {
 
   static getContextMenu(menuList) {
     Menu.sortMenus(menuList);
+    console.log('------menuList')
+    console.log(menuList)
     return menuList;
   }
 

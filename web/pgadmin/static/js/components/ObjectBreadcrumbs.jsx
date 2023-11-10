@@ -105,7 +105,7 @@ export default function ObjectBreadcrumbs({pgAdmin}) {
           </div>
         </div>
         {preferences.breadcrumbs_show_comment && objectData.description &&
-          <div className={classes.row}>
+          <div className={classes.row }>
             <CommentIcon style={{height: '1rem', marginRight: '0.125rem'}} />
             <div className={classes.overflow}>{objectData.description}</div>
           </div>}

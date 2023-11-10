@@ -339,6 +339,8 @@ define('pgadmin.browser', [
     add_panels: function() {
       /* Add hooked-in panels by extensions */
       let panels = JSON.parse(pgBrowser.panels_items);
+      console.log('---add_panels')
+      console.dir(panels)
       _.each(panels, function(panel) {
         if (panel.isIframe) {
           pgBrowser.frames[panel.name] = new pgBrowser.Frame({

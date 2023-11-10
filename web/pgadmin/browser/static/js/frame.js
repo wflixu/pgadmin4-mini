@@ -60,7 +60,7 @@ define([
             myPanel.layout().addItem($frameArea);
             that.panel = myPanel;
             let frame = new wcIFrame($frameArea, myPanel);
-
+         
             myPanel.frameData = {
               pgAdminName: that.name,
               frameInitialized: false,

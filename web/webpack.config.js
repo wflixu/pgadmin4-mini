@@ -16,7 +16,7 @@ const sourceDir = __dirname + "/pgadmin/static";
 // webpack.shim.js contains path references for resolve > alias configuration
 // and other util function used in CommonsChunksPlugin.
 const webpackShimConfig = require("./webpack.shim");
-const PRODUCTION = process.env.NODE_ENV === "production";
+const PRODUCTION = process.env.NODE_ENV === "development";
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");

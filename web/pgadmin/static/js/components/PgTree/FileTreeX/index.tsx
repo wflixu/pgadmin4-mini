@@ -595,6 +595,8 @@ export class FileTreeX extends React.Component<IFileTreeXProps> {
   };
 
   private handleItemCtxMenu = (ev: React.MouseEvent, item: FileOrDir) => {
+    console.warn('---handleItemCtxMenu --');
+    
     return this.props.onContextMenu?.(ev, item);
   };
 
