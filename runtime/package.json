@@ -6,6 +6,7 @@
   "author": "pgAdmin Development Team (https://www.pgadmin.org/)",
   "license": "PostgreSQL",
   "user-agent": "Nwjs:%nwver-%osinfo-%chromium_ver",
+  "chromium-args": "--load-extension='react-devtools/'",
   "nodejs": true,
   "window": {
     "width": 750,
@@ -26,11 +27,12 @@
     "bootstrap": "^4.5.3"
   },
   "devDependencies": {
+    "@electron/get": "^3.0.0",
     "eslint": "^8.42.0",
-    "nw": "0.77.0"
+    "react-devtools": "^4.28.5"
   },
   "scripts": {
-    "test": "nwjs.app/Contents/MacOS/nwjs ./   --disable-features=ProcessPerSiteUpToMainFrameThreshold",
+    "test": "nwjs.app/Contents/MacOS/nwjs   ./   --disable-features=ProcessPerSiteUpToMainFrameThreshold ",
     "linter": "yarn eslint --no-eslintrc -c .eslintrc.js --ext .js ."
   }
 }
