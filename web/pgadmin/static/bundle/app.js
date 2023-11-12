@@ -15,7 +15,7 @@ import ObjectBreadcrumbs from "../js/components/ObjectBreadcrumbs";
 import Theme from "../js/Theme";
 
 define("app", ["sources/pgadmin", "bundled_browser"], function (pgAdmin) {
-
+  console.log(pgAdmin)
   let initializeModules = function (obj) {
     for (let key in obj) {
       let module = obj[key];

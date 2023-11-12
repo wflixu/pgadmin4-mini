@@ -683,6 +683,7 @@ function SchemaDialogView({
   };
 
   const save = (changeData) => {
+    
     props.onSave(isNew, changeData)
       .then(()=>{
         if(schema.informText) {

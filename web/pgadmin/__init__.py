@@ -823,7 +823,7 @@ def create_app(app_name=None):
 
         # Check the auth key is valid, if it's set, and we're not in server
         # mode, and it's not a help file request.
-        app.logger.warn("-----before_request")
+        app.logger.warning(request.endpoint )
         if (
             not config.SERVER_MODE
             and app.PGADMIN_INT_KEY != ""
@@ -836,8 +836,8 @@ def create_app(app_name=None):
                 and request.endpoint != "help.static"
             )
         ):
+            app.logger.warning('@@@@401----')
             abort(401)
-        app.logger.warn("----------SERVER_MODE----------- %s", config.SERVER_MODE)
         if not config.SERVER_MODE and not current_user.is_authenticated:
             user = user_datastore.find_user(email=config.DESKTOP_USER)
 

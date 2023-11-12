@@ -11,6 +11,7 @@
 
 import json
 from functools import wraps
+import logging
 
 import pgadmin.browser.server_groups.servers.databases as database
 from flask import render_template, request, jsonify, current_app
@@ -574,6 +575,9 @@ class IndexesView(PGChildNodeView, SchemaDiffObjectCompare):
            scid: Schema ID
            tid: Table ID
         """
+        current_app.logger.error('table_create--------------------------------------------------------------------')
+        logger = logging.getLogger('werkzeug')
+        logger.info("table_create--------------------------------------------------------------------")
         data = request.form if request.form else json.loads(
             request.data
         )
@@ -607,7 +611,7 @@ class IndexesView(PGChildNodeView, SchemaDiffObjectCompare):
         data["storage_parameters"] = {}
 
         storage_params = index_utils.get_storage_params(data['amname'])
-
+       
         for param in storage_params:
             if param in data and data[param] != '':
                 data["storage_parameters"].update({param: data[param]})
@@ -696,6 +700,7 @@ class IndexesView(PGChildNodeView, SchemaDiffObjectCompare):
            tid: Table ID
            idx: Index ID
         """
+        current_app.logger.info('table_delete----------------------')
         idx = kwargs.get('idx', None)
         only_sql = kwargs.get('only_sql', False)
 

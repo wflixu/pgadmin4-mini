@@ -2,6 +2,12 @@
 
 学习 pgadmin4 源码 删除window 兼容代码，删除作为服务器代码，只能在macos 运行
 
+单独启动 
+
+```
+venv/bin/python3  web/pgAdmin4.py  
+
+```
 
 pgAdmin 4 is a rewrite of the popular pgAdmin3 management tool for the
 PostgreSQL (http://www.postgresql.org) database.

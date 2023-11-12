@@ -671,6 +671,7 @@ It may have been removed by another user.
            sid: Server ID
            did: Database ID
         """
+        current_app.logger.warning('create_shcam------------')
         data = request.form if request.form else json.loads(
             request.data
         )

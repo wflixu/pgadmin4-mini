@@ -948,6 +948,8 @@ class TableView(BaseTableView, DataTypeReader, SchemaDiffTableCompare):
         data = request.form if request.form else json.loads(
             request.data
         )
+        current_app.logger.warning('table_create-----------------')
+        current_app.logger.warning(data)
 
         for k, v in data.items():
             try:
@@ -992,7 +994,7 @@ class TableView(BaseTableView, DataTypeReader, SchemaDiffTableCompare):
 
             # Append SQL for partitions
             sql += '\n' + partitions_sql
-
+          
             status, res = self.conn.execute_scalar(sql)
             if not status:
                 return internal_server_error(errormsg=res)
@@ -1023,6 +1025,7 @@ class TableView(BaseTableView, DataTypeReader, SchemaDiffTableCompare):
                 scid=new_scid, data=data, conn=self.conn
             )
 
+            current_app.logger.warning(sql)
             status, tid = self.conn.execute_scalar(sql)
             if not status:
                 return internal_server_error(errormsg=tid)

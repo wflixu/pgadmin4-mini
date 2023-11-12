@@ -287,12 +287,12 @@ DEBUG = True
 #   INFO     20
 #   DEBUG    10
 #   NOTSET    0
-CONSOLE_LOG_LEVEL = logging.DEBUG
-FILE_LOG_LEVEL = logging.DEBUG
+CONSOLE_LOG_LEVEL = logging.INFO
+FILE_LOG_LEVEL = logging.WARNING
 
 # Log format.
-CONSOLE_LOG_FORMAT = '%(asctime)s: %(levelname)s\t%(name)s:\t%(message)s'
-FILE_LOG_FORMAT = '%(asctime)s: %(levelname)s\t%(name)s:\t%(message)s'
+CONSOLE_LOG_FORMAT = '%(asctime)s: %(levelname)s %(filename)s \t%(name)s:\t%(message)s'
+FILE_LOG_FORMAT = '%(asctime)s: %(levelname)s%(pathname)s %(filename)s \t%(name)s:\t%(message)s'
 
 # Log file name. This goes in the data directory, except on non-Windows
 # platforms in server mode.

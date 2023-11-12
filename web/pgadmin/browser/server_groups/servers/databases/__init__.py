@@ -688,7 +688,7 @@ class DatabaseView(PGChildNodeView):
         required_args = [
             'name'
         ]
-
+        current_app.logger.error('create_database----------------')
         data = request.form if request.form else json.loads(
             request.data
         )

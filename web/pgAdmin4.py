@@ -15,10 +15,11 @@ to start a web server."""
 
 
 import os
-# os.environ['PGADMIN_SERVER_MODE'] = 'OFF'
-# os.environ['PGADMIN_INT_KEY'] = '6217b349-4000-433e-a008-e1dacfdd7a8b'
-# os.environ['PGADMIN_INT_PORT'] = '5050'
-
+os.environ['PGADMIN_SERVER_MODE'] = 'OFF'
+os.environ['PGADMIN_INT_KEY'] = '6217b349-4000-433e-a008-e1dacfdd7a8b'
+os.environ['PGADMIN_INT_PORT'] = '5050'
+# http://127.0.0.1:5050/?key=6217b349-4000-433e-a008-e1dacfdd7a8b
+# http://127.0.0.1:5050/misc/ping?key=6217b349-4000-433e-a008-e1dacfdd7a8b
 import sys
 
 import builtins
